@@ -1,3 +1,5 @@
+## Leet Code 3rd Maximum number in an Array ## LC: 414
+
 class Solution(object):
     def thirdMax(self, nums):
         """
