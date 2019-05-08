@@ -1,0 +1,17 @@
+class Solution(object):
+    def thirdMax(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        v_list = [float('-inf'), float('-inf'), float('-inf')]
+        for x in nums:
+            if x not in v_list:
+                if x > v_list[0]:
+                    v_list = [x, v_list[0], v_list[1]]
+                elif x > v_list[1]:
+                    v_list = [v_list[0], x, v_list[1]]
+                elif x > v_list[2]:
+                    v_list = [v_list[0], v_list[1], x]          
+        return max(v_list) if float('-inf') in v_list else v_list[2]
+                    
